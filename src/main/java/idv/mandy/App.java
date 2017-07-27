@@ -12,6 +12,12 @@ public class App {
         System.out.println("a*2=" + (a * 2));
         int b = 1;
         System.out.println("b*2=" + b *2);
+
+        int c = 0;
+        for (int i = 1; i <= 100; i++){
+            c += i;
+        }
+        System.out.println(c);
     }
 }
 
