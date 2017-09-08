@@ -20,4 +20,16 @@ public class Calculator {
     public double divide(double dividee, double divider) {
         return dividee / divider;
     }
+
+    public int fibonacci(int n) {
+        if (1 == n || 2 == n) {
+            return 1;
+        }
+        if (0 >= n) {
+            return -1;
+        }
+        int result = fibonacci(n - 1) + fibonacci(n - 2);
+        return result;
+    }
+
 }
