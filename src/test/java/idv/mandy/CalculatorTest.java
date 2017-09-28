@@ -19,6 +19,7 @@ public class CalculatorTest extends TestCase {
         double result = myCalculator.add(a, b);
         Assert.assertEquals(5.2, result, DELTA);
     }
+
     @Test
     public void testSubstract() throws Exception {
         double a = 2D;
@@ -27,6 +28,7 @@ public class CalculatorTest extends TestCase {
         double result = myCalculator.substract(a, b);
         Assert.assertEquals(-2D, result, DELTA);
     }
+
     @Test
     public void testMultiply() throws Exception {
         double a = 2D;
@@ -35,6 +37,7 @@ public class CalculatorTest extends TestCase {
         double result = myCalculator.multiply(a, b);
         Assert.assertEquals(8D, result, DELTA);
     }
+
     @Test
     public void testDivide() throws Exception {
         double a = 2;
@@ -43,18 +46,25 @@ public class CalculatorTest extends TestCase {
         double result = myCalculator.divide(a, b);
         Assert.assertEquals(0.5, result, DELTA);
     }
+
     @Test
-    public void testfibonacci(){
-        int n=1;
+    public void testfibonacci() {
+        int n = 1;
         Calculator myCalculator = new Calculator();
-        int result =myCalculator.fibonacci(n);
-        Assert.assertEquals(1,result);
+        long result = myCalculator.fibonacci(n);
+        Assert.assertEquals(1, result);
     }
+
     @Test
-    public void testfibonacci10(){
-        int n=10;
+    public void testfibonacci20() {
+        int n = 20;
         Calculator myCalculator = new Calculator();
-        int result =myCalculator.fibonacci(n);
-        Assert.assertEquals(55,result);
+        long start = System.currentTimeMillis();
+        long result = myCalculator.fibonacci(n);
+        long end = System.currentTimeMillis();
+        long timeDiff = end - start;
+
+        Assert.assertEquals(6765, result);
+        Assert.assertTrue("Long", timeDiff < 10L);
     }
 }
